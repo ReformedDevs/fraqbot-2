@@ -8,7 +8,7 @@ if APP_DIR not in sys.path:
     sys.path.append(APP_DIR)
 
 from helpers.components import Fraqbot  # noqa: E402
-from helpers.file import load_file  # noqa: E402
+from helpers.files import load_file  # noqa: E402
 from helpers.utils import call_rest_api  # noqa: E402
 
 

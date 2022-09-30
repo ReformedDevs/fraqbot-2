@@ -1,5 +1,4 @@
 import os
-import json
 
 from helpers.components import Message
 from helpers.components import redis_connect
@@ -15,9 +14,7 @@ def get_messages(conn, modules):
     sub.subscribe('discord-inbound')
 
     for message in sub.listen():
-        print(json.dumps(message, indent=2, sort_keys=True))
         message = Message(message)
-        print(json.dumps(message.data, indent=2, sort_keys=True))
 
         for m in modules:
             if (

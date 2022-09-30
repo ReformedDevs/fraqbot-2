@@ -16,9 +16,6 @@ if HELPERS_DIR not in sys.path:
     sys.path.append(HELPERS_DIR)
 
 
-from file import load_file  # noqa: E402
-
-
 LOGGER = logging.getLogger('helpers.utils')
 
 

@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+  bytebot:
+    container_name: fraqbot-gateway
+    image: ghcr.io/bytebot-chat/gateway-discord:latest
+    command:
+      - '-id'
+      - 'discord'
+      - '-inbound'
+      - 'discord-inbound'
+      - '-outbound'
+      - 'discord-outbound'
+      - '-t'
+      - '$TOKEN'
+      - '-redis'
+      - 'redis:6379'
+    depends_on:
+      - redis
+    env_file:
+      - .env
+  fraqbot-py:
+    container_name: fraqbot-py
+    build: app/
+    depends_on:
+      - bytebot
+    env_file:
+      - .env
+  redis:
+    container_name: fraqbot-redis
+    image: redis:6.2.3
+    ports:
+      - '127.0.0.1:6379:6379'

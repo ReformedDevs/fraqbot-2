@@ -1,0 +1,55 @@
+- match: (^what if i told you)(.*$)
+  template: morpheus
+  text:
+    - ${1}
+    - ${2}
+- match: (^.*)(y u no .*$)
+  template: yuno
+  text:
+    - ${1}
+    - ${2}
+- match: (^one does not simply)(.*$)
+  template: mordor
+  text:
+    - ${1}
+    - ${2}
+- match: (^brace yourselves)(.*$)
+  template: winter
+  text:
+    - ${1}
+    - ${2}
+- match: why not both
+  template: both
+  text:
+    - ' '
+    - why not both
+- match: i have no idea what i'm doing
+  template: noidea
+  text:
+    - i have no idea
+    - what i'm doing
+- match: it's a trap
+  template: ackbar
+  text:
+    - ' '
+    - it's a trap!
+# - match: (^yo dawg,? (?:i|we) heard you like .*)(so (?:i|we) put .*)
+#   template: yodawg
+#   text:
+#     - ${1}
+#     - ${2}
+# - match: (^ermahgerd!)(.*$)
+#   template: ermahgerd
+#   text:
+#     - ${1}
+#     - ${2}
+- match: no!
+  template: grumpycat
+  text:
+    - ' '
+    - no!
+- match: (^can't .*)(if you don't.*$)
+  template: rollsafe
+  text:
+    - ${1}
+    - ${2}
